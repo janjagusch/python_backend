@@ -1204,6 +1204,9 @@ ModelInstanceState::StartStubProcess()
 
     stub_args[2] = bash_argument.c_str();
 
+    // Debug to see why the call fails.
+    system((python_backend_stub).c_str());
+
     int stub_status_code =
         system((python_backend_stub + "> /dev/null 2>&1").c_str());
 
